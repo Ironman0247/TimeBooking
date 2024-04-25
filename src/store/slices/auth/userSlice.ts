@@ -10,7 +10,7 @@ export type UserState = {
 
 const initialState: UserState = {
     avatar: '',
-    userName: '',
+    userName: 'Enkhjin',
     email: '',
     authority: [],
 }

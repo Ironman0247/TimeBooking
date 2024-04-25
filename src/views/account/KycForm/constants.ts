@@ -1,9 +1,6 @@
 export const statusOptions = [
-    { label: 'Married', value: 'M' },
-    { label: 'Widowed', value: 'W' },
-    { label: 'Separated', value: 'S' },
-    { label: 'Divorced', value: 'D' },
-    { label: 'Single ', value: 'S' },
+    { label: 'Гэрэлсэн', value: 'M' },
+    { label: 'Ганц бие ', value: 'S' },
 ]
 
 export const occupationOptions = [

@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import Button from '@/components/ui/Button'
 import Loading from '@/components/shared/Loading'
-import Logo from '@/components/template/Logo'
 import ContentTable from './ContentTable'
 import { useLocation } from 'react-router-dom'
 import isEmpty from 'lodash/isEmpty'
@@ -65,7 +64,6 @@ const InvoiceContent = () => {
                 <>
                     <div className="flex flex-col md:flex-row justify-between gap-4 mb-10">
                         <div>
-                            <Logo className="mb-3" mode={mode} />
                             <address className="not-italic">
                                 <div>
                                     <h5>Elstar, Inc.</h5>

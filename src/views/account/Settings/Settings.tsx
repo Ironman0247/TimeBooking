@@ -55,15 +55,12 @@ const settingsMenu: Record<
         path: string
     }
 > = {
-    profile: { label: 'Profile', path: 'profile' },
-    password: { label: 'Password', path: 'password' },
-    notification: { label: 'Notification', path: 'notification' },
-    integration: { label: 'Integration', path: 'integration' },
-    billing: { label: 'Billing', path: 'billing' },
+    profile: { label: 'Хувийн мэдээлэл', path: 'profile' },
+    password: { label: 'Нууц үг', path: 'password' },
 }
 
 const Settings = () => {
-    const [currentTab, setCurrentTab] = useState('profile')
+    const [currentTab, setCurrentTab] = useState('Хувийн мэдээлэл')
     const [data, setData] = useState<Partial<AccountSetting>>({})
 
     const navigate = useNavigate()

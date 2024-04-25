@@ -3,20 +3,8 @@ import UsersAvatarGroup from '@/components/shared/UsersAvatarGroup'
 
 const data = [
     {
-        userName: 'Ron Vargas',
-        avatarImg: '/img/avatars/thumb-3.jpg',
-    },
-    {
-        userName: 'Carolyn Hanson',
-        avatarImg: '/img/avatars/thumb-9.jpg',
-    },
-    {
-        userName: 'Samantha Phillips',
-        avatarImg: '/img/avatars/thumb-6.jpg',
-    },
-    {
-        userName: 'Ella Robinson',
-        avatarImg: '/img/avatars/thumb-15.jpg',
+        userName: 'Enkhjin',
+        avatarImg: '/img/avatars/me.jpg',
     },
 ]
 

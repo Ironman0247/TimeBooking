@@ -23,39 +23,11 @@ const AVATAR_SIZE = 30
 
 const data: User[] = [
     {
-        firstName: 'Maria',
-        lastName: 'Anders',
+        firstName: 'Enkhjin',
+        lastName: 'Gantumur',
         age: 24,
-        avatar: '/img/avatars/thumb-1.jpg',
+        avatar: '/img/avatars/me.jpg',
         status: 'complicated',
-    },
-    {
-        firstName: 'Francisco',
-        lastName: 'Chang',
-        age: 9,
-        avatar: '/img/avatars/thumb-2.jpg',
-        status: 'single',
-    },
-    {
-        firstName: 'Roland',
-        lastName: 'Mendel',
-        age: 1,
-        avatar: '/img/avatars/thumb-3.jpg',
-        status: 'single',
-    },
-    {
-        firstName: 'Helen',
-        lastName: 'Bennett',
-        age: 43,
-        avatar: '/img/avatars/thumb-4.jpg',
-        status: 'married',
-    },
-    {
-        firstName: 'Yoshi ',
-        lastName: 'Tannamuri',
-        age: 37,
-        avatar: '/img/avatars/thumb-5.jpg',
-        status: 'single',
     },
 ]
 

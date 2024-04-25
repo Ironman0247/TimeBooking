@@ -1,5 +1,4 @@
 import { useEffect } from 'react'
-import Logo from '@/components/template/Logo'
 import Menu from '@/components/ui/Menu'
 import ScrollBar from '@/components/ui/ScrollBar'
 import {
@@ -97,11 +96,6 @@ const StackedSideNavMini = (props: StackedSideNavMiniProps) => {
 
     return (
         <div {...rest}>
-            <Logo
-                mode={logoMode()}
-                type="streamline"
-                className={SIDE_NAV_CONTENT_GUTTER}
-            />
             <ScrollBar autoHide direction={direction}>
                 <Menu
                     className="px-4 pb-4"

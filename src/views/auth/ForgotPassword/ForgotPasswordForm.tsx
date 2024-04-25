@@ -21,7 +21,7 @@ type ForgotPasswordFormSchema = {
 }
 
 const validationSchema = Yup.object().shape({
-    email: Yup.string().required('Please enter your email'),
+    email: Yup.string().required('Имэйл хаягаа оруулна уу'),
 })
 
 const ForgotPasswordForm = (props: ForgotPasswordFormProps) => {
@@ -56,18 +56,16 @@ const ForgotPasswordForm = (props: ForgotPasswordFormProps) => {
             <div className="mb-6">
                 {emailSent ? (
                     <>
-                        <h3 className="mb-1">Check your email</h3>
+                        <h3 className="mb-1">Имэйл хаягаа шалгана уу</h3>
                         <p>
-                            We have sent a password recovery instruction to your
-                            email
+                            Бид таны имэйл хаяг руу нууц үг сэргээх зааварчилгааг илгээсэн
                         </p>
                     </>
                 ) : (
                     <>
-                        <h3 className="mb-1">Forgot Password</h3>
+                        <h3 className="mb-1">Нууц үгээ мартсан</h3>
                         <p>
-                            Please enter your email address to receive a
-                            verification code
+                            Баталгаажуулах код хүлээн авахын тулд имэйл хаягаа оруулна уу
                         </p>
                     </>
                 )}
@@ -102,7 +100,7 @@ const ForgotPasswordForm = (props: ForgotPasswordFormProps) => {
                                         type="email"
                                         autoComplete="off"
                                         name="email"
-                                        placeholder="Email"
+                                        placeholder="Имэйл"
                                         component={Input}
                                     />
                                 </FormItem>
@@ -113,11 +111,11 @@ const ForgotPasswordForm = (props: ForgotPasswordFormProps) => {
                                 variant="solid"
                                 type="submit"
                             >
-                                {emailSent ? 'Resend Email' : 'Send Email'}
+                                {emailSent ? 'Дахин илгээх' : 'Код илгээх'}
                             </Button>
                             <div className="mt-4 text-center">
-                                <span>Back to </span>
-                                <ActionLink to={signInUrl}>Sign in</ActionLink>
+                                <ActionLink to={signInUrl}>Нэвтрэх</ActionLink>
+                                <span> нүүр лүү буцах </span>
                             </div>
                         </FormContainer>
                     </Form>

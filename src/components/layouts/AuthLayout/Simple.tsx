@@ -1,7 +1,6 @@
 import { cloneElement } from 'react'
 import Container from '@/components/shared/Container'
 import Card from '@/components/ui/Card'
-import Logo from '@/components/template/Logo'
 import type { ReactNode, ReactElement } from 'react'
 import type { CommonProps } from '@/@types/common'
 
@@ -18,7 +17,6 @@ const Simple = ({ children, content, ...rest }: SimpleProps) => {
                     bodyClass="md:p-10"
                 >
                     <div className="text-center">
-                        <Logo type="streamline" imgClass="mx-auto" />
                     </div>
                     <div className="text-center">
                         {content}

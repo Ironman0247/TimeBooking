@@ -1,7 +1,5 @@
 import { cloneElement } from 'react'
 import Avatar from '@/components/ui/Avatar'
-import Logo from '@/components/template/Logo'
-import { APP_NAME } from '@/constants/app.constant'
 import type { CommonProps } from '@/@types/common'
 
 interface SideProps extends CommonProps {
@@ -14,33 +12,34 @@ const Side = ({ children, content, ...rest }: SideProps) => {
             <div
                 className="bg-no-repeat bg-cover py-6 px-16 flex-col justify-between hidden lg:flex"
                 style={{
-                    backgroundImage: `url('/img/others/auth-side-bg.jpg')`,
+                    backgroundImage: `url('/img/others/teal.png')`,
                 }}
             >
-                <Logo mode="dark" />
+                {/* <Logo mode="dark" /> */}
                 <div>
-                    <div className="mb-6 flex items-center gap-4">
+                    {/* <div className="mb-6 flex items-center gap-4">
                         <Avatar
                             className="border-2 border-white"
                             shape="circle"
-                            src="/img/avatars/thumb-10.jpg"
+                            src="/img/avatars/me.jpg"
                         />
                         <div className="text-white">
                             <div className="font-semibold text-base">
-                                Brittany Hale
+                                Gantumur Enkhjin
                             </div>
-                            <span className="opacity-80">CTO, Onward</span>
+                            <span className="opacity-80">Gantumur Enkhjin</span>
                         </div>
-                    </div>
+                    </div> */}
                     <p className="text-lg text-white opacity-80">
-                        Elstar comes with a complete set of UI components
-                        crafted with Tailwind CSS, it fulfilled most of the use
-                        case to create modern and beautiful UI and application
+                        Үсчин болон хэрэглэгчид зориулагдсан цаг захиалгын сайт
                     </p>
+                    <button className="text-white bg-indigo-600 py-2 px-4 rounded mt-4">
+                        Login as a barber
+                    </button>
                 </div>
                 <span className="text-white">
-                    Copyright &copy; {`${new Date().getFullYear()}`}{' '}
-                    <span className="font-semibold">{`${APP_NAME}`}</span>{' '}
+                    {' '}
+                    <span className="font-semibold">{``}</span>{' '}
                 </span>
             </div>
             <div className="col-span-2 flex flex-col justify-center items-center bg-white dark:bg-gray-800">
@@ -48,8 +47,8 @@ const Side = ({ children, content, ...rest }: SideProps) => {
                     <div className="mb-8">{content}</div>
                     {children
                         ? cloneElement(children as React.ReactElement, {
-                              ...rest,
-                          })
+                            ...rest,
+                        })
                         : null}
                 </div>
             </div>

@@ -16,7 +16,7 @@ const metadata = {
         {
             propName: 'authenticatedEntryPath',
             type: `<code>string</code>`,
-            defaultDemo: `<code>'/app/sales/dashboard'</code>`,
+            defaultDemo: `<code>'/app/barberLocation/dashboard'</code>`,
             defaultStarter: `<code>'/home'</code>`,
             desc: 'URL that will redirect after authenticated',
         },
@@ -64,7 +64,7 @@ const Application = () => {
             </span>
             <SyntaxHighlighter language="ts">{`const appConfig: AppConfig = {
     apiPrefix: '/api',
-    authenticatedEntryPath: '/app/sales/dashboard',
+    authenticatedEntryPath: '/app/barberLocation/dashboard',
     unAuthenticatedEntryPath: '/sign-in',
     tourPath: '/app/account/kyc-form',
     locale: 'en',

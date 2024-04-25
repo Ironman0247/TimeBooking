@@ -15,18 +15,7 @@ type SalesReportProps = {
 
 const SalesReport = ({ className, data = {} }: SalesReportProps) => {
     return (
-        <Card className={className}>
-            <div className="flex items-center justify-between">
-                <h4>Sales Report</h4>
-                <Button size="sm">Export Report</Button>
-            </div>
-            <Chart
-                series={data.series}
-                xAxis={data.categories}
-                height="380px"
-                customOptions={{ legend: { show: false } }}
-            />
-        </Card>
+        ""
     )
 }
 

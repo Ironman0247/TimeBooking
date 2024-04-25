@@ -98,13 +98,13 @@ const ConfirmDialog = (props: ConfirmDialogProps) => {
     return (
         <Dialog contentClassName="pb-0 px-0" {...rest}>
             <div className="px-6 pb-6 pt-2 flex">
-                <div>
+                {/* <div>
                     <StatusIcon status={type} />
                 </div>
                 <div className="ml-4 rtl:mr-4">
                     <h5 className="mb-2">{title}</h5>
                     {children}
-                </div>
+                </div> */}
             </div>
             <div className="text-right px-6 py-3 bg-gray-100 dark:bg-gray-700 rounded-bl-lg rounded-br-lg">
                 <Button

@@ -20,7 +20,7 @@ export default function authFakeApi(server: Server, apiPrefix: string) {
         return new Response(
             401,
             { some: 'header' },
-            { message: 'Invalid email or password!' }
+            { message: 'Нэвтрэх нэр эсвэл нууц үг буруу байна!' }
         )
     })
 
@@ -31,12 +31,12 @@ export default function authFakeApi(server: Server, apiPrefix: string) {
     server.post(`${apiPrefix}/sign-up`, (schema, { requestBody }) => {
         const { userName, password, email } = JSON.parse(requestBody)
         const userExist = schema.db.signInUserData.findBy({
-            accountUserName: userName,
+            accountUserName: "Enkhjin",
         })
         const emailUsed = schema.db.signInUserData.findBy({ email })
         const newUser = {
-            avatar: '/img/avatars/thumb-1.jpg',
-            userName,
+            avatar: '/img/avatars/me.jpg',
+            userName: "Enkhjin",
             email,
             authority: ['admin', 'user'],
         }
@@ -47,7 +47,7 @@ export default function authFakeApi(server: Server, apiPrefix: string) {
             return new Response(
                 400,
                 { some: 'header' },
-                { errors, message: 'User already exist!' }
+                { errors, message: 'Хэрэглэгч бүртгэлтэй байна.!' }
             )
         }
 
@@ -58,13 +58,13 @@ export default function authFakeApi(server: Server, apiPrefix: string) {
             return new Response(
                 400,
                 { some: 'header' },
-                { errors, message: 'Email already used' }
+                { errors, message: 'Имэйл бүртгэлтэй байна' }
             )
         }
 
         schema.db.signInUserData.insert({
             ...newUser,
-            ...{ id: uniqueId('user_'), password, accountUserName: userName },
+            ...{ id: uniqueId('user_'), password, accountUserName: "Enhkjin" },
         })
         return {
             user: newUser,

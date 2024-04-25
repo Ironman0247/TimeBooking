@@ -3,9 +3,9 @@ import Dropdown from '@/components/ui/Dropdown'
 import EllipsisButton from '@/components/shared/EllipsisButton'
 
 const dropdownList = [
-    { label: 'Add Flag', value: 'addFlag' },
-    { label: 'Move', value: 'move' },
-    { label: 'Setting', value: 'projectSetting' },
+    // { label: 'Add Flag', value: 'addFlag' },
+    // { label: 'Move', value: 'move' },
+    // { label: 'Setting', value: 'projectSetting' },
 ]
 
 const Example = () => {

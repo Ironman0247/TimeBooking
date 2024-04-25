@@ -9,15 +9,15 @@ export default function knowledgeBaseFakeApi(
         value: string
         articles?: unknown[]
     }[] = [
-        { label: 'Survey', value: 'survey' },
-        { label: 'Themes', value: 'themes' },
-        { label: 'Security', value: 'security' },
-        { label: 'Integration', value: 'integration' },
-        { label: 'Media', value: 'media' },
-        { label: 'Analytic', value: 'analytic' },
-        { label: 'Chatbot', value: 'chatbot' },
-        { label: 'Commission', value: 'commission' },
-    ]
+            { label: 'Survey', value: 'survey' },
+            { label: 'Themes', value: 'themes' },
+            { label: 'Security', value: 'security' },
+            { label: 'Integration', value: 'integration' },
+            { label: 'Media', value: 'media' },
+            { label: 'Analytic', value: 'analytic' },
+            { label: 'Chatbot', value: 'chatbot' },
+            { label: 'Commission', value: 'commission' },
+        ]
 
     server.get(
         `${apiPrefix}/knowledge-base/categories`,
@@ -41,7 +41,7 @@ export default function knowledgeBaseFakeApi(
         (schema, { queryParams }) => {
             const { id } = queryParams
 
-            const article = schema.db.helpCenterArticleListData.find(id)
+            const article = schema.db.helpCenterArticleListData.find("id")
 
             return article
         }
@@ -52,7 +52,7 @@ export default function knowledgeBaseFakeApi(
         (schema, { queryParams }) => {
             const { id } = queryParams
 
-            const article = schema.db.helpCenterArticleListData.find(id)
+            const article = schema.db.helpCenterArticleListData.find("id")
             let articles = schema.db.helpCenterArticleListData
             const category = article.category
             const sameCategoryArticle =
@@ -111,13 +111,13 @@ export default function knowledgeBaseFakeApi(
                     category,
                     authors: [
                         {
-                            name: 'Carolyn Perkins',
+                            name: 'G.Enhkjin',
                             img: '/img/avatars/thumb-1.jpg',
                         },
                     ],
                     starred: true,
                     updateTime: '6 months ago',
-                    createdBy: 'Carolyn Perkins',
+                    createdBy: 'G.Enhkjin',
                     timeToRead: 2,
                     viewCount: 0,
                     ...rest,

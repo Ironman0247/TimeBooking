@@ -18,14 +18,14 @@ interface SignInFormProps extends CommonProps {
 }
 
 type SignInFormSchema = {
-    userName: string
+    email: string
     password: string
     rememberMe: boolean
 }
 
 const validationSchema = Yup.object().shape({
-    userName: Yup.string().required('Please enter your user name'),
-    password: Yup.string().required('Please enter your password'),
+    email: Yup.string().required('Имэйл хаягаа оруулна уу'),
+    password: Yup.string().required('Нууц үгээ оруулна уу'),
     rememberMe: Yup.bool(),
 })
 
@@ -45,10 +45,10 @@ const SignInForm = (props: SignInFormProps) => {
         values: SignInFormSchema,
         setSubmitting: (isSubmitting: boolean) => void
     ) => {
-        const { userName, password } = values
+        const { email, password } = values
         setSubmitting(true)
 
-        const result = await signIn({ userName, password })
+        const result = await signIn({ email, password })
 
         if (result?.status === 'failed') {
             setMessage(result.message)
@@ -83,23 +83,23 @@ const SignInForm = (props: SignInFormProps) => {
                     <Form>
                         <FormContainer>
                             <FormItem
-                                label="User Name"
+                                label="Имэйл"
                                 invalid={
                                     (errors.userName &&
                                         touched.userName) as boolean
                                 }
-                                errorMessage={errors.userName}
+                                errorMessage={errors.userName   }
                             >
                                 <Field
-                                    type="text"
+                                    type="email"
                                     autoComplete="off"
-                                    name="userName"
-                                    placeholder="User Name"
+                                    name="email"
+                                    placeholder="Имэйл хаягаа оруулна уу"
                                     component={Input}
                                 />
                             </FormItem>
                             <FormItem
-                                label="Password"
+                                label="Нууц үг"
                                 invalid={
                                     (errors.password &&
                                         touched.password) as boolean
@@ -109,7 +109,7 @@ const SignInForm = (props: SignInFormProps) => {
                                 <Field
                                     autoComplete="off"
                                     name="password"
-                                    placeholder="Password"
+                                    placeholder="Нууц үгээ оруулна уу"
                                     component={PasswordInput}
                                 />
                             </FormItem>
@@ -119,10 +119,10 @@ const SignInForm = (props: SignInFormProps) => {
                                     name="rememberMe"
                                     component={Checkbox}
                                 >
-                                    Remember Me
+                                    Сануулах
                                 </Field>
                                 <ActionLink to={forgotPasswordUrl}>
-                                    Forgot Password?
+                                    Нууц үгээ мартсан уу?
                                 </ActionLink>
                             </div>
                             <Button
@@ -131,11 +131,11 @@ const SignInForm = (props: SignInFormProps) => {
                                 variant="solid"
                                 type="submit"
                             >
-                                {isSubmitting ? 'Signing in...' : 'Sign In'}
+                                {isSubmitting ? 'Нэвтэрч байна...' : 'Нэвтрэх'}
                             </Button>
                             <div className="mt-4 text-center">
-                                <span>{`Don't have an account yet?`} </span>
-                                <ActionLink to={signUpUrl}>Sign up</ActionLink>
+                                <span>{`Бүртгүүлэх үү?`} </span>
+                                <ActionLink to={signUpUrl}>Шинээр Бүртгүүлэх</ActionLink>
                             </div>
                         </FormContainer>
                     </Form>

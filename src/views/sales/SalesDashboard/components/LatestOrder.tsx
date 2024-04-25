@@ -131,51 +131,7 @@ const LatestOrder = ({ data = [], className }: LatestOrderProps) => {
     })
 
     return (
-        <Card className={className}>
-            <div className="flex items-center justify-between mb-6">
-                <h4>Latest Orders</h4>
-                <Button size="sm">View Orders</Button>
-            </div>
-            <Table>
-                <THead>
-                    {table.getHeaderGroups().map((headerGroup) => (
-                        <Tr key={headerGroup.id}>
-                            {headerGroup.headers.map((header) => {
-                                return (
-                                    <Th
-                                        key={header.id}
-                                        colSpan={header.colSpan}
-                                    >
-                                        {flexRender(
-                                            header.column.columnDef.header,
-                                            header.getContext()
-                                        )}
-                                    </Th>
-                                )
-                            })}
-                        </Tr>
-                    ))}
-                </THead>
-                <TBody>
-                    {table.getRowModel().rows.map((row) => {
-                        return (
-                            <Tr key={row.id}>
-                                {row.getVisibleCells().map((cell) => {
-                                    return (
-                                        <Td key={cell.id}>
-                                            {flexRender(
-                                                cell.column.columnDef.cell,
-                                                cell.getContext()
-                                            )}
-                                        </Td>
-                                    )
-                                })}
-                            </Tr>
-                        )
-                    })}
-                </TBody>
-            </Table>
-        </Card>
+        ""
     )
 }
 

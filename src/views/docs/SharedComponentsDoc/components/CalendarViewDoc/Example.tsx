@@ -16,48 +16,9 @@ const Example = () => {
     const eventsData = [
         {
             id: '0',
-            title: 'All Day Event',
+            title: 'Matrix дээр үсээ засуулах',
             start: getDate('YEAR-MONTH-01'),
             eventColor: 'orange',
-        },
-        {
-            id: '1',
-            title: 'Long Event',
-            start: getDate('YEAR-MONTH-07'),
-            end: getDate('YEAR-MONTH-10'),
-            eventColor: 'red',
-        },
-        {
-            id: '2',
-            groupId: '999',
-            title: 'Repeating Event',
-            start: getDate('YEAR-MONTH-09T16:00:00+00:00'),
-            eventColor: 'blue',
-        },
-        {
-            id: '3',
-            groupId: '999',
-            title: 'Repeating Event',
-            start: getDate('YEAR-MONTH-16T16:00:00+00:00'),
-            eventColor: 'blue',
-        },
-        {
-            id: '4',
-            title: 'Birthday Party',
-            start: getDate('YEAR-MONTH-19T07:00:00+00:00'),
-            eventColor: 'purple',
-        },
-        {
-            id: '5',
-            title: 'Meeting',
-            start: getDate('YEAR-MONTH-18T14:30:00+00:00'),
-            eventColor: 'blue',
-        },
-        {
-            id: '6',
-            title: 'Dinner',
-            start: getDate('YEAR-MONTH-18T20:00:00+00:00'),
-            eventColor: 'emerald',
         },
     ]
 

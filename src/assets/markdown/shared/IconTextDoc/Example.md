@@ -8,7 +8,7 @@ const Example = () => {
             className="text-emerald-500 text-sm font-semibold"
             icon={<HiClock className="text-lg" />}
         >
-            In Progress
+            Уншиж байна.
         </IconText>
     )
 }

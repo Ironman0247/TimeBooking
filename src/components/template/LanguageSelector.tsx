@@ -13,10 +13,7 @@ import { HiCheck } from 'react-icons/hi'
 import type { CommonProps } from '@/@types/common'
 
 const languageList = [
-    { label: 'English', value: 'en', flag: 'us' },
-    { label: 'Chinese', value: 'zhCn', flag: 'cn' },
-    { label: 'Espanol', value: 'es', flag: 'sp' },
-    { label: 'Arabic', value: 'ar', flag: 'ar' },
+    { label: 'Mongolia', value: 'us', flag: 'us' },
 ]
 
 const _LanguageSelector = ({ className }: CommonProps) => {
@@ -33,11 +30,7 @@ const _LanguageSelector = ({ className }: CommonProps) => {
             {loading ? (
                 <Spinner size={20} />
             ) : (
-                <Avatar
-                    size={24}
-                    shape="circle"
-                    src={`/img/countries/${selectLangFlag}.png`}
-                />
+               ""
             )}
         </div>
     )

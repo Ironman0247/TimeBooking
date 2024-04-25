@@ -26,29 +26,8 @@ type SearchResult = {
 
 const recommendedSearch: SearchResult[] = [
     {
-        title: 'Recommended',
+        title: 'Санал болгох',
         data: [
-            {
-                title: 'Documentation',
-                url: '/docs/documentation/introduction',
-                icon: 'documentation',
-                category: 'Docs',
-                categoryTitle: 'Docs',
-            },
-            {
-                title: 'Changelog',
-                url: '/docs/changelog',
-                icon: 'changeLog',
-                category: 'Docs',
-                categoryTitle: 'Docs',
-            },
-            {
-                title: 'Button',
-                url: '/ui-components/button',
-                icon: 'common',
-                category: 'Common',
-                categoryTitle: 'UI Components',
-            },
         ],
     },
 ]

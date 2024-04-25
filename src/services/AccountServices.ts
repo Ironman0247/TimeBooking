@@ -1,4 +1,27 @@
 import ApiService from './ApiService'
+import type {
+    ForgotPassword,
+    ResetPassword,
+} from '@/@types/auth'
+import {
+    auth,
+    signInWithEmailAndPassword,
+    createUserWithEmailAndPassword,
+    signOut,
+} from '@/firebase';
+
+export async function apiSignIn ({email, password}: {email: string, password: string}) {
+    return await signInWithEmailAndPassword(auth, email, password).then(user => user).catch(err => err);
+}
+
+export async function apiSignUp ({email, password}: {email: string, password: string}) {
+    return createUserWithEmailAndPassword(auth, email, password).then(user => user).catch(err => err);  
+}
+
+export async function apiSignOut () {
+    return await signOut(auth).then(user => user).catch(err => err);
+}
+
 
 export async function apiGetAccountSettingData<T>() {
     return ApiService.fetchData<T>({

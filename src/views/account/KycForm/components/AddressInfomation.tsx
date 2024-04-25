@@ -37,28 +37,12 @@ type AddressFormProps = {
 }
 
 const validationSchema = Yup.object().shape({
-    country: Yup.string().required('Please select country'),
-    addressLine1: Yup.string().required('Please enter your address'),
-    addressLine2: Yup.string(),
-    city: Yup.string().required('Please enter your city'),
-    state: Yup.string().required('Please enter your state'),
-    zipCode: Yup.string().required('Please enter zip code'),
-    sameCorrespondenceAddress: Yup.bool(),
-    correspondenceAddress: Yup.object().when('sameCorrespondenceAddress', {
-        is: false,
-        then: (schema) =>
-            schema.shape({
-                country: Yup.string().required('Please select country'),
-                addressLine1: Yup.string().required(
-                    'Please enter your address'
-                ),
-                addressLine2: Yup.string(),
-                city: Yup.string().required('Please enter your city'),
-                state: Yup.string().required('Please enter your state'),
-                zipCode: Yup.string().required('Please enter zip code'),
-            }),
-        otherwise: (schema) => schema,
-    }),
+    country: Yup.string().required('Улсаа сонгоно уу'),
+    addressLine1: Yup.string().required('Хотоо сонгоно уу'),
+    addressLine2: Yup.string().required('Дүүргээ сонгоно уу'),
+    city: Yup.string().required('Хороогоо сонгоно уу'),
+    state: Yup.string().required('Байр | Гудмаа оруулна уу'),
+    zipCode: Yup.string().required('Тоотоо оруулна уу'),
 })
 
 const AddressForm = (props: AddressFormProps) => {
@@ -92,14 +76,14 @@ const AddressForm = (props: AddressFormProps) => {
         <>
             <div className="md:grid grid-cols-2 gap-4">
                 <FormItem
-                    label="Country"
+                    label="Улс"
                     invalid={getError(countryName) && getTouched(countryName)}
                     errorMessage={getError(countryName)}
                 >
                     <Field name={countryName}>
                         {({ field, form }: FieldProps) => (
                             <Select
-                                placeholder="Country"
+                                placeholder="Улс"
                                 field={field}
                                 form={form}
                                 options={countryList}
@@ -114,7 +98,7 @@ const AddressForm = (props: AddressFormProps) => {
                     </Field>
                 </FormItem>
                 <FormItem
-                    label="Address Line 1"
+                    label="Хот"
                     invalid={
                         getError(addressLine1Name) &&
                         getTouched(addressLine1Name)
@@ -125,14 +109,14 @@ const AddressForm = (props: AddressFormProps) => {
                         type="text"
                         autoComplete="off"
                         name={addressLine1Name}
-                        placeholder="Address Line 1"
+                        placeholder="Хот"
                         component={Input}
                     />
                 </FormItem>
             </div>
             <div className="md:grid grid-cols-2 gap-4">
                 <FormItem
-                    label="Address Line 2"
+                    label="Дүүрэг"
                     invalid={
                         getError(addressLine2Name) &&
                         getTouched(addressLine2Name)
@@ -143,12 +127,12 @@ const AddressForm = (props: AddressFormProps) => {
                         type="text"
                         autoComplete="off"
                         name={addressLine2Name}
-                        placeholder="Address Line 2"
+                        placeholder="Дүүрэг"
                         component={Input}
                     />
                 </FormItem>
                 <FormItem
-                    label="City"
+                    label="Хороо"
                     invalid={getError(cityName) && getTouched(cityName)}
                     errorMessage={getError(cityName)}
                 >
@@ -156,14 +140,14 @@ const AddressForm = (props: AddressFormProps) => {
                         type="text"
                         autoComplete="off"
                         name={cityName}
-                        placeholder="City"
+                        placeholder="Хороо"
                         component={Input}
                     />
                 </FormItem>
             </div>
             <div className="md:grid grid-cols-2 gap-4">
                 <FormItem
-                    label="State"
+                    label="Хотхон, Гудам"
                     invalid={getError(stateName) && getTouched(stateName)}
                     errorMessage={getError(stateName)}
                 >
@@ -171,12 +155,12 @@ const AddressForm = (props: AddressFormProps) => {
                         type="text"
                         autoComplete="off"
                         name={stateName}
-                        placeholder="State"
+                        placeholder="Байр | Гудам"
                         component={Input}
                     />
                 </FormItem>
                 <FormItem
-                    label="Zip Code"
+                    label="Тоот"
                     invalid={getError(zipCodeName) && getTouched(zipCodeName)}
                     errorMessage={getError(zipCodeName)}
                 >
@@ -184,7 +168,7 @@ const AddressForm = (props: AddressFormProps) => {
                         type="text"
                         autoComplete="off"
                         name={zipCodeName}
-                        placeholder="Zip Code"
+                        placeholder="Тоот"
                         component={Input}
                     />
                 </FormItem>
@@ -229,11 +213,7 @@ const AddressInfomation = ({
     return (
         <>
             <div className="mb-8">
-                <h3 className="mb-2">Address Information</h3>
-                <p>
-                    Enter your address information help us to speed up the
-                    verication process.
-                </p>
+                <h3 className="mb-2">Байршлын мэдээлэл</h3>
             </div>
             <Formik
                 enableReinitialize
@@ -251,55 +231,19 @@ const AddressInfomation = ({
                     return (
                         <Form>
                             <FormContainer>
-                                <h5 className="mb-4">Permanent Address</h5>
+                                <h5 className="mb-4">Байнгийн хаяг</h5>
                                 <AddressForm
-                                    countryName="country"
-                                    addressLine1Name="addressLine1"
-                                    addressLine2Name="addressLine2"
-                                    cityName="city"
-                                    stateName="state"
-                                    zipCodeName="zipCode"
+                                    countryName="Улс"
+                                    addressLine1Name="Хот"
+                                    addressLine2Name="Дүүрэг"
+                                    cityName="Хороо"
+                                    stateName="Байр | Гудам"
+                                    zipCodeName="Тоот"
                                     {...formProps}
                                 />
-                                <FormItem>
-                                    <Field name="sameCorrespondenceAddress">
-                                        {({ field, form }: FieldProps) => (
-                                            <Checkbox
-                                                checked={
-                                                    values.sameCorrespondenceAddress
-                                                }
-                                                onChange={(val) =>
-                                                    form.setFieldValue(
-                                                        field.name,
-                                                        val
-                                                    )
-                                                }
-                                            >
-                                                Correspondence address is same
-                                                as above
-                                            </Checkbox>
-                                        )}
-                                    </Field>
-                                </FormItem>
-                                {!values.sameCorrespondenceAddress && (
-                                    <>
-                                        <h5 className="mb-4">
-                                            Correspondence Address
-                                        </h5>
-                                        <AddressForm
-                                            countryName="correspondenceAddress.country"
-                                            addressLine1Name="correspondenceAddress.addressLine1"
-                                            addressLine2Name="correspondenceAddress.addressLine2"
-                                            cityName="correspondenceAddress.city"
-                                            stateName="correspondenceAddress.state"
-                                            zipCodeName="correspondenceAddress.zipCode"
-                                            {...formProps}
-                                        />
-                                    </>
-                                )}
                                 <div className="flex justify-end gap-2">
                                     <Button type="button" onClick={onBack}>
-                                        Back
+                                        Буцах
                                     </Button>
                                     <Button
                                         loading={isSubmitting}
@@ -307,8 +251,8 @@ const AddressInfomation = ({
                                         type="submit"
                                     >
                                         {currentStepStatus === 'complete'
-                                            ? 'Save'
-                                            : 'Next'}
+                                            ? 'Хадгалах'
+                                            : 'Дараагийн'}
                                     </Button>
                                 </div>
                             </FormContainer>

@@ -44,15 +44,6 @@ const appsRoute: Routes = [
         authority: [ADMIN, USER],
     },
     {
-        key: 'appsCrm.customers',
-        path: `${APP_PREFIX_PATH}/crm/customers`,
-        component: lazy(() => import('@/views/crm/Customers')),
-        authority: [ADMIN, USER],
-        meta: {
-            header: 'Customers',
-        },
-    },
-    {
         key: 'appsCrm.customerDetails',
         path: `${APP_PREFIX_PATH}/crm/customer-details`,
         component: lazy(() => import('@/views/crm/CustomerDetail')),
@@ -84,7 +75,7 @@ const appsRoute: Routes = [
     },
     {
         key: 'appsSales.dashboard',
-        path: `${APP_PREFIX_PATH}/sales/dashboard`,
+        path: `${APP_PREFIX_PATH}/barberLocation/dashboard`,
         component: lazy(() => import('@/views/sales/SalesDashboard')),
         authority: [ADMIN, USER],
     },
@@ -122,76 +113,6 @@ const appsRoute: Routes = [
         key: 'appsSales.orderDetails',
         path: `${APP_PREFIX_PATH}/sales/order-details/:orderId`,
         component: lazy(() => import('@/views/sales/OrderDetails')),
-        authority: [ADMIN, USER],
-    },
-    {
-        key: 'appsCrypto.dashboard',
-        path: `${APP_PREFIX_PATH}/crypto/dashboard`,
-        component: lazy(() => import('@/views/crypto/CryptoDashboard')),
-        authority: [ADMIN, USER],
-    },
-    {
-        key: 'appsCrypto.portfolio',
-        path: `${APP_PREFIX_PATH}/crypto/portfolio`,
-        component: lazy(() => import('@/views/crypto/Portfolio')),
-        authority: [ADMIN, USER],
-        meta: {
-            header: 'Portfolio',
-        },
-    },
-    {
-        key: 'appsCrypto.market',
-        path: `${APP_PREFIX_PATH}/crypto/market`,
-        component: lazy(() => import('@/views/crypto/Market')),
-        authority: [ADMIN, USER],
-        meta: {
-            header: 'Market',
-        },
-    },
-    {
-        key: 'appsCrypto.wallets',
-        path: `${APP_PREFIX_PATH}/crypto/wallets`,
-        component: lazy(() => import('@/views/crypto/Wallets')),
-        authority: [ADMIN, USER],
-        meta: {
-            header: 'Wallets',
-        },
-    },
-    {
-        key: 'appsknowledgeBase.helpCenter',
-        path: `${APP_PREFIX_PATH}/knowledge-base/help-center`,
-        component: lazy(() => import('@/views/knowledge-base/HelpCenter')),
-        authority: [ADMIN, USER],
-        meta: {
-            pageContainerType: 'gutterless',
-        },
-    },
-    {
-        key: 'appsknowledgeBase.article',
-        path: `${APP_PREFIX_PATH}/knowledge-base/article`,
-        component: lazy(() => import('@/views/knowledge-base/Article')),
-        authority: [ADMIN, USER],
-    },
-    {
-        key: 'appsknowledgeBase.manageArticles',
-        path: `${APP_PREFIX_PATH}/knowledge-base/manage-articles`,
-        component: lazy(() => import('@/views/knowledge-base/ManageArticles')),
-        authority: [ADMIN, USER],
-        meta: {
-            header: 'Manage Articles',
-            extraHeader: lazy(
-                () =>
-                    import(
-                        '@/views/knowledge-base/ManageArticles/components/PanelHeader'
-                    )
-            ),
-            headerContainer: true,
-        },
-    },
-    {
-        key: 'appsknowledgeBase.editArticle',
-        path: `${APP_PREFIX_PATH}/knowledge-base/edit-article`,
-        component: lazy(() => import('@/views/knowledge-base/EditArticle')),
         authority: [ADMIN, USER],
     },
     {

@@ -42,8 +42,8 @@ function useAuth() {
                         setUser(
                             resp.data.user || {
                                 avatar: '',
-                                userName: 'Anonymous',
-                                authority: ['USER'],
+                                userName: 'Enkhjin',
+                                authority: ['ADMIN'],
                                 email: '',
                             }
                         )
@@ -78,7 +78,7 @@ function useAuth() {
                         setUser(
                             resp.data.user || {
                                 avatar: '',
-                                userName: 'Anonymous',
+                                userName: 'Munkhjin',
                                 authority: ['USER'],
                                 email: '',
                             }
@@ -108,7 +108,7 @@ function useAuth() {
         dispatch(
             setUser({
                 avatar: '',
-                userName: '',
+                userName: 'Gantumur',
                 email: '',
                 authority: [],
             })

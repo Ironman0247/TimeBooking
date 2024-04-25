@@ -1,5 +1,4 @@
 import { cloneElement } from 'react'
-import Logo from '@/components/template/Logo'
 import { APP_NAME } from '@/constants/app.constant'
 import type { CommonProps } from '@/@types/common'
 import type { ReactNode, ReactElement } from 'react'
@@ -14,23 +13,19 @@ const Cover = ({ children, content, ...rest }: CoverProps) => {
             <div
                 className="col-span-2 bg-no-repeat bg-cover py-6 px-16 flex-col justify-between bg-white dark:bg-gray-800 hidden lg:flex"
                 style={{
-                    backgroundImage: `url('/img/others/auth-cover-bg.jpg')`,
+                    backgroundImage: `url('/img/others/timeBooking.png')`,
                 }}
             >
-                <Logo mode="dark" />
                 <div>
-                    <h3 className="text-white mb-4">
-                        Jump start your project with Elstar
-                    </h3>
                     <p className="text-lg text-white opacity-80 max-w-[700px]">
-                        Elstar comes with a complete set of UI components
-                        crafted with Tailwind CSS, it fulfilled most of the use
-                        case to create modern and beautiful UI and application
+                        Үсчин болон хэрэглэгчид зориулагдсан цаг захиалгын сайт
                     </p>
+                    <button className="text-white bg-indigo-600 py-2 px-4 rounded mt-4">
+                        Үсчингийн эрхээр нэвтрэх
+                    </button>
                 </div>
                 <span className="text-white">
-                    Copyright &copy; {`${new Date().getFullYear()}`}{' '}
-                    <span className="font-semibold">{`${APP_NAME}`}</span>{' '}
+                    <span className="font-semibold">{`${APP_NAME}`}</span>
                 </span>
             </div>
             <div className="flex flex-col justify-center items-center bg-white dark:bg-gray-800">

@@ -1,7 +1,7 @@
 import DemoLayout from '@/components/docs/DemoLayout'
 
 // Demo
-import Example from './Example'
+// import Example from './Example'
 
 const mdPath = 'DoubleSidedImageDoc'
 
@@ -16,7 +16,7 @@ const demos = [
         mdPath: mdPath,
         title: 'Example',
         desc: `DoubleSidedImage accpet all <code>img</code> tag attribute as props`,
-        component: <Example />,
+        // component: <Example />,
     },
 ]
 
@@ -39,7 +39,7 @@ const DoubleSidedImageDoc = () => {
         <DemoLayout
             innerFrame={false}
             header={demoHeader}
-            demos={demos}
+            // demos={demos}
             api={demoApi}
             mdPrefixPath="shared"
         />

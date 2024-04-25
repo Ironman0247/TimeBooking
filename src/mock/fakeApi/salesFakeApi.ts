@@ -4,7 +4,7 @@ import paginate from '@/utils/paginate'
 import type { Server } from 'miragejs'
 
 export default function salesFakeApi(server: Server, apiPrefix: string) {
-    server.post(`${apiPrefix}/sales/dashboard`, (schema) => {
+    server.post(`${apiPrefix}/barberLocation/dashboard`, (schema) => {
         return schema.db.salesDashboardData[0]
     })
 

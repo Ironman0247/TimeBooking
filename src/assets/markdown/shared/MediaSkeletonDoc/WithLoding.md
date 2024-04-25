@@ -37,12 +37,12 @@ const WithLoding = () => {
                 <div className="flex items-center gap-2">
                     <Avatar
                         size={45}
-                        src="/img/avatars/thumb-1.jpg"
+                        src="/img/avatars/me.jpg"
                         shape="circle"
                     />
                     <div>
-                        <h6>Carolyn Perkins</h6>
-                        <p>carolyn.p@elstar.com</p>
+                        <h6>G.Enkhjin</h6>
+                        <p>20b1num2451</p>
                     </div>
                 </div>
             </Loading>

@@ -21,12 +21,6 @@ const docsRoute: Routes = [
         component: lazy(() => import('@/views/docs/UtilsDoc')),
         authority: [],
     },
-    {
-        key: 'docs.changeLog',
-        path: `${DOCS_PREFIX_PATH}/changelog`,
-        component: lazy(() => import('@/views/docs/ChangeLog')),
-        authority: [],
-    },
 ]
 
 export default docsRoute

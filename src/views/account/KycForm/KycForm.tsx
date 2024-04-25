@@ -21,11 +21,7 @@ injectReducer('accountDetailForm', reducer)
 const PersonalInformation = lazy(
     () => import('./components/PersonalInformation')
 )
-const Identification = lazy(() => import('./components/Identification'))
 const AddressInfomation = lazy(() => import('./components/AddressInfomation'))
-const FinancialInformation = lazy(
-    () => import('./components/FinancialInformation')
-)
 const AccountReview = lazy(() => import('./components/AccountReview'))
 
 const DetailForm = () => {
@@ -48,9 +44,7 @@ const DetailForm = () => {
     const handleNextChange = (
         values:
             | PersonalInformationType
-            | IdentificationType
-            | Address
-            | FinancialInformationType,
+            | Address,
         name: string
     ) => {
         const nextStep = currentStep + 1
@@ -103,14 +97,6 @@ const DetailForm = () => {
                                 />
                             )}
                             {currentStep === 1 && (
-                                <Identification
-                                    data={formData.identification}
-                                    currentStepStatus={currentStepStatus}
-                                    onNextChange={handleNextChange}
-                                    onBackChange={handleBackChange}
-                                />
-                            )}
-                            {currentStep === 2 && (
                                 <AddressInfomation
                                     data={formData.addressInformation}
                                     currentStepStatus={currentStepStatus}
@@ -118,15 +104,7 @@ const DetailForm = () => {
                                     onBackChange={handleBackChange}
                                 />
                             )}
-                            {currentStep === 3 && (
-                                <FinancialInformation
-                                    data={formData.financialInformation}
-                                    currentStepStatus={currentStepStatus}
-                                    onNextChange={handleNextChange}
-                                    onBackChange={handleBackChange}
-                                />
-                            )}
-                            {currentStep === 4 && <AccountReview />}
+                            {currentStep === 2 && <AccountReview />}
                         </Suspense>
                     </div>
                 </div>

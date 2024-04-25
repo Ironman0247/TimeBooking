@@ -18,7 +18,6 @@ const Cover = () => {
             </div>
             <Loading loading={isLoading} type="cover">
                 <Alert type="info" title="Alert!" showIcon>
-                    Additional description and information about copywriting.
                 </Alert>
             </Loading>
         </>
